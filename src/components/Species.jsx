@@ -1,25 +1,47 @@
 import { useState } from 'react'
 
+const base = import.meta.env.BASE_URL
+
 const species = [
   {
     nombre: 'Murciélago vampiro común',
-    imagen: '/images/species/vampiro.jpg',  // ✅
-    // ...
+    cientifico: 'Desmodus rotundus',
+    habitat: 'América Central y Sur',
+    dieta: 'Sangre (hematófago)',
+    curiosidad: 'El único mamífero que se alimenta exclusivamente de sangre. Comparte alimento con compañeros hambrientos.',
+    emoji: '🩸',
+    color: '#dc2626',
+    imagen: `${base}images/species/vampiro.jpg`,
   },
   {
     nombre: 'Zorro volador gigante',
-    imagen: '/images/species/zorro-volador.jpg',  // ✅
-    // ...
+    cientifico: 'Pteropus vampyrus',
+    habitat: 'Sudeste Asiático',
+    dieta: 'Frutas y néctar',
+    curiosidad: 'Con una envergadura de hasta 1.5 metros, es el murciélago más grande del mundo.',
+    emoji: '🌴',
+    color: '#d4a853',
+    imagen: `${base}images/species/zorro-volador.jpg`,
   },
   {
     nombre: 'Murciélago orejudo',
-    imagen: '/images/species/orejudo.jpg',  // ✅
-    // ...
+    cientifico: 'Plecotus auritus',
+    habitat: 'Europa y Asia',
+    dieta: 'Polillas e insectos',
+    curiosidad: 'Sus orejas pueden ser tan largas como su cuerpo. Las dobla bajo las alas al hibernar.',
+    emoji: '👂',
+    color: '#c084fc',
+    imagen: `${base}images/species/orejudo.jpg`,
   },
   {
     nombre: 'Murciélago pescador',
-    imagen: '/images/species/pescador.jpg',  // ✅
-    // ...
+    cientifico: 'Noctilio leporinus',
+    habitat: 'América Tropical',
+    dieta: 'Peces y crustáceos',
+    curiosidad: 'Usa ecolocalización para detectar ondas en el agua y atrapa peces con sus grandes garras.',
+    emoji: '🐟',
+    color: '#22d3ee',
+    imagen: `${base}images/species/pescador.jpg`,
   },
 ]
 
@@ -39,7 +61,6 @@ function ImagenEspecie({ src, alt, color, emoji }) {
       justifyContent: 'center',
       overflow: 'hidden',
     }}>
-      {/* Fallback emoji si la imagen falla */}
       {error ? (
         <span style={{ fontSize: '5rem' }}>{emoji}</span>
       ) : (
@@ -50,7 +71,7 @@ function ImagenEspecie({ src, alt, color, emoji }) {
               fontSize: '3rem',
               opacity: 0.4,
               animation: 'pulse 1.5s ease-in-out infinite',
-            }}></span>
+            }}>{emoji}</span>
           )}
           <img
             src={src}
@@ -67,7 +88,6 @@ function ImagenEspecie({ src, alt, color, emoji }) {
               inset: 0,
             }}
           />
-          {/* Overlay de color sobre la imagen */}
           {!cargando && (
             <div style={{
               position: 'absolute',
@@ -131,7 +151,6 @@ export default function Species() {
                 boxShadow: hovered === i ? `0 20px 40px ${s.color}22` : 'none',
               }}
             >
-              {/* Imagen lado izquierdo */}
               {i % 2 === 0 && (
                 <ImagenEspecie
                   src={s.imagen}
@@ -141,7 +160,6 @@ export default function Species() {
                 />
               )}
 
-              {/* Texto */}
               <div style={{ padding: '2.5rem' }}>
                 <div style={{
                   fontFamily: "'Crimson Text', serif",
@@ -181,12 +199,12 @@ export default function Species() {
                 }}>{s.curiosidad}</p>
               </div>
 
-              {/* Imagen lado derecho */}
               {i % 2 !== 0 && (
                 <ImagenEspecie
                   src={s.imagen}
                   alt={s.nombre}
                   color={s.color}
+                  emoji={s.emoji}
                 />
               )}
             </div>
