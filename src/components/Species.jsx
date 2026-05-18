@@ -3,39 +3,23 @@ import { useState } from 'react'
 const species = [
   {
     nombre: 'Murciélago vampiro común',
-    cientifico: 'Desmodus rotundus',
-    habitat: 'América Central y Sur',
-    dieta: 'Sangre (hematófago)',
-    curiosidad: 'El único mamífero que se alimenta exclusivamente de sangre. Comparte alimento con compañeros hambrientos.',
-    color: '#dc2626',
-    imagen: './public/images/species/vampiro.jpg',
+    imagen: '/images/species/vampiro.jpg',  // ✅
+    // ...
   },
   {
     nombre: 'Zorro volador gigante',
-    cientifico: 'Pteropus vampyrus',
-    habitat: 'Sudeste Asiático',
-    dieta: 'Frutas y néctar',
-    curiosidad: 'Con una envergadura de hasta 1.5 metros, es el murciélago más grande del mundo.',
-    color: '#d4a853',
-    imagen: './public/images/species/zorro-volador.jpg',
+    imagen: '/images/species/zorro-volador.jpg',  // ✅
+    // ...
   },
   {
     nombre: 'Murciélago orejudo',
-    cientifico: 'Plecotus auritus',
-    habitat: 'Europa y Asia',
-    dieta: 'Polillas e insectos',
-    curiosidad: 'Sus orejas pueden ser tan largas como su cuerpo. Las dobla bajo las alas al hibernar.',
-    color: '#c084fc',
-    imagen: './public/images/species/orejudo.jpg',
+    imagen: '/images/species/orejudo.jpg',  // ✅
+    // ...
   },
   {
     nombre: 'Murciélago pescador',
-    cientifico: 'Noctilio leporinus',
-    habitat: 'América Tropical',
-    dieta: 'Peces y crustáceos',
-    curiosidad: 'Usa ecolocalización para detectar ondas en el agua y atrapa peces con sus grandes garras.',
-    color: '#22d3ee',
-    imagen: './public/images/species/pescador.jpg',
+    imagen: '/images/species/pescador.jpg',  // ✅
+    // ...
   },
 ]
 
