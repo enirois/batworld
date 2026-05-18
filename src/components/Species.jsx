@@ -7,7 +7,6 @@ const species = [
     habitat: 'América Central y Sur',
     dieta: 'Sangre (hematófago)',
     curiosidad: 'El único mamífero que se alimenta exclusivamente de sangre. Comparte alimento con compañeros hambrientos.',
-    emoji: '🩸',
     color: '#dc2626',
     imagen: './public/images/species/vampiro.jpg',
   },
@@ -17,7 +16,6 @@ const species = [
     habitat: 'Sudeste Asiático',
     dieta: 'Frutas y néctar',
     curiosidad: 'Con una envergadura de hasta 1.5 metros, es el murciélago más grande del mundo.',
-    emoji: '🌴',
     color: '#d4a853',
     imagen: './public/images/species/zorro-volador.jpg',
   },
@@ -27,7 +25,6 @@ const species = [
     habitat: 'Europa y Asia',
     dieta: 'Polillas e insectos',
     curiosidad: 'Sus orejas pueden ser tan largas como su cuerpo. Las dobla bajo las alas al hibernar.',
-    emoji: '👂',
     color: '#c084fc',
     imagen: './public/images/species/orejudo.jpg',
   },
@@ -37,7 +34,6 @@ const species = [
     habitat: 'América Tropical',
     dieta: 'Peces y crustáceos',
     curiosidad: 'Usa ecolocalización para detectar ondas en el agua y atrapa peces con sus grandes garras.',
-    emoji: '🐟',
     color: '#22d3ee',
     imagen: './public/images/species/pescador.jpg',
   },
@@ -70,7 +66,7 @@ function ImagenEspecie({ src, alt, color, emoji }) {
               fontSize: '3rem',
               opacity: 0.4,
               animation: 'pulse 1.5s ease-in-out infinite',
-            }}>{emoji}</span>
+            }}></span>
           )}
           <img
             src={src}
@@ -207,7 +203,6 @@ export default function Species() {
                   src={s.imagen}
                   alt={s.nombre}
                   color={s.color}
-                  emoji={s.emoji}
                 />
               )}
             </div>
